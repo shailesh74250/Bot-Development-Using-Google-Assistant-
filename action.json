@@ -1,0 +1,40 @@
+{
+  "actions": [
+    {
+     "name": "MAIN",
+     "intent": {
+       "name": "actions.intent.MAIN"
+     },
+     "fulfillment": {
+       "conversationName": "ShaileshBot"
+     }
+    },
+    {
+      "name": "BUY",
+      "intent": {
+        "name": "BUY",
+        "parameters": [{
+          "name": "color",
+          "type": "org.schema.type.Color"
+        }],
+        "trigger": {
+          "queryPatterns": [
+            "find some $org.schema.type.Color:color sneakers",
+            "buy some blue suede shoes",
+            "get running shoes"
+          ]
+        }
+      },
+      "fulfillment": {
+        "conversationName": "ShaileshBot"
+      }
+    }
+  ],
+  "conversations": {
+    "sekaiApp": {
+      "name": "ShaileshBot",
+      "url": "https://swift-liger-92.localtunnel.me/webhook",
+      "fulfillmentApiVersion": 2
+    }
+  }
+}
